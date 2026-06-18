@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ASCII"?>
+<organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1">
+  <customUserInfoDefinitions/>
+  <users>
+    <user userName="Caesar">
+      <firstName>Fulano</firstName>
+      <lastName></lastName>
+      <title>Mr</title>
+      <jobTitle>Evetrhing Doer</jobTitle>
+      <manager></manager>
+      <personalData/>
+      <professionalData>
+        <email>fulanoempresario@gmail.com</email>
+        <phoneNumber>555</phoneNumber>
+        <mobileNumber>555</mobileNumber>
+      </professionalData>
+      <password encrypted="false">bdm</password>
+      <customUserInfoValues/>
+    </user>
+  </users>
+  <roles>
+    <role name="Employee">
+      <displayName>Employee</displayName>
+    </role>
+    <role name="Supervisor">
+      <displayName>Supervisor</displayName>
+    </role>
+    <role name="Manager">
+      <displayName>Manager</displayName>
+    </role>
+    <role name="SystemAdministrator">
+      <displayName>System Administrator</displayName>
+    </role>
+    <role name="IngredientInspector">
+      <displayName>Ingredient Inspector</displayName>
+    </role>
+    <role name="Cook">
+      <displayName>Cook</displayName>
+      <description>cocinero</description>
+    </role>
+    <role name="QualityManager">
+      <displayName>Quality Manager</displayName>
+    </role>
+    <role name="StoreSupervisor">
+      <displayName>Store Supervisor</displayName>
+    </role>
+    <role name="DispatchStaff">
+      <displayName>Dispatch Staff</displayName>
+    </role>
+    <role name="OrderRecepcionist">
+      <displayName>Order Recepcionist</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="LitteCaesars">
+      <displayName>Little Caesars Corporation</displayName>
+      <description>Little Caesars Corporation for pizza production
+</description>
+    </group>
+    <group name="Administration" parentPath="/LitteCaesars">
+      <displayName>Administration</displayName>
+      <description></description>
+    </group>
+    <group name="Cashiers" parentPath="/LitteCaesars">
+      <displayName>Cashiers</displayName>
+    </group>
+    <group name="Kitchen" parentPath="/LitteCaesars">
+      <displayName>Kitchen</displayName>
+      <description>La cocina</description>
+    </group>
+    <group name="Delivery" parentPath="/LitteCaesars">
+      <displayName>Delivery</displayName>
+    </group>
+    <group name="Inventory" parentPath="/LitteCaesars">
+      <displayName>Inventory</displayName>
+    </group>
+    <group name="HumanResources" parentPath="/LitteCaesars">
+      <displayName>Human Resources</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>Cook</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>Employee</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>Supervisor</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>Manager</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>StoreSupervisor</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>DispatchStaff</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>Caesar</userName>
+      <roleName>SystemAdministrator</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+  </memberships>
+</organization:Organization>
