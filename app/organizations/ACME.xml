@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <organization:Organization xmlns:organization="http://documentation.bonitasoft.com/organization-xml-schema/1.1">
+  <customUserInfoDefinitions/>
   <users>
     <user userName="william.jobs">
       <firstName>William</firstName>
@@ -555,6 +556,24 @@
     <role name="ValidadorInsumos">
       <displayName>Validador de insumos</displayName>
     </role>
+    <role name="recepcionPedido">
+      <displayName>recepcion de pedido</displayName>
+    </role>
+    <role name="Cocina">
+      <displayName>Cocina</displayName>
+    </role>
+    <role name="TecnicoCalidad">
+      <displayName>Tecnico de calidad</displayName>
+    </role>
+    <role name="Supervisor">
+      <displayName>Supervisor de tienda</displayName>
+    </role>
+    <role name="PersonalDespacho">
+      <displayName>Personal de despacho</displayName>
+    </role>
+    <role name="Cajero">
+      <displayName>Cajero</displayName>
+    </role>
   </roles>
   <groups>
     <group name="acme">
@@ -732,9 +751,8 @@
     </membership>
     <membership>
       <userName>anthony.nichols</userName>
-      <roleName>member</roleName>
-      <groupName>north_america</groupName>
-      <groupParentPath>/acme/sales</groupParentPath>
+      <roleName>Cajero</roleName>
+      <groupName>acme</groupName>
     </membership>
   </memberships>
 </organization:Organization>

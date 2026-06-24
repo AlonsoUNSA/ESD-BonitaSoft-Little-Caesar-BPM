@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
     <businessObjects>
+        <businessObject qualifiedName="com.company.model.ControlCalidad">
+            <fields>
+                <field type="LONG" length="255" name="idControl" nullable="true" collection="false"/>
+                <field type="OFFSETDATETIME" length="255" name="fechaRevision" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="cumpleCalidad" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="observaciones" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Insumo">
             <fields>
+                <field type="LONG" length="255" name="idInsumo" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="nombreInsumo" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="unidadMedida" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="cantidad" nullable="false" collection="false"/>
+                <field type="LONG" length="255" name="cantidad" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
+        <businessObject qualifiedName="com.company.model.Pedido">
+            <fields>
+                <field type="INTEGER" length="255" name="idPedido" nullable="true" collection="false"/>
+                <field type="LOCALDATE" length="255" name="fecha_hora" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="estado" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="modalidad_entrega" nullable="true" collection="false"/>
+                <field type="TEXT" length="255" name="observaciones" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.ControlCalidad" fetchType="LAZY" name="idControl" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Insumo" fetchType="LAZY" name="insumos" nullable="true" collection="true"/>
+                <relationField type="AGGREGATION" reference="com.company.model.ReposicionInsumos" fetchType="LAZY" name="reposiciones" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -13,7 +40,7 @@
         </businessObject>
         <businessObject qualifiedName="com.company.model.Reclamo">
             <fields>
-                <field type="STRING" length="255" name="idPedido" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="idReclamo" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="tipoIncidencia" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="evidenciaUrl" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="estadoReclamo" nullable="true" collection="false"/>
@@ -30,9 +57,10 @@
         <businessObject qualifiedName="com.company.model.ReposicionInsumos">
             <fields>
                 <field type="LONG" length="255" name="idSede" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="idReposicion" nullable="true" collection="false"/>
                 <field type="LOCALDATE" length="255" name="fechaSolicitud" nullable="false" collection="false"/>
-                <field type="BOOLEAN" length="255" name="esUrgente" nullable="false" collection="false"/>
                 <field type="BOOLEAN" length="255" name="estaAprobado" nullable="true" collection="false"/>
+                <field type="BOOLEAN" length="255" name="esUrgente" nullable="false" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Insumo" fetchType="LAZY" name="insumo" nullable="true" collection="true"/>
             </fields>
             <uniqueConstraints/>
