@@ -68,7 +68,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_z8_zt2MzEfG06qyWUPqF3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_z8_ztmMzEfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_QDf8qGM6EfG06qyWUPqF3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DIt2UGM8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_ipih0G5KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_QDf8p2M6EfG06qyWUPqF3w"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_QDf8qmM6EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -77,15 +77,78 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_rWSAEGM0EfG06qyWUPqF3w" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_rWQx8GM0EfG06qyWUPqF3w" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_rWSnIGM0EfG06qyWUPqF3w" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_XEM2YG5KEfGM0IkyzaWCZQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_XEM2YW5KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" content="solicitudDeInsumo" type="TYPE_VARIABLE" returnType="com.company.model.ReposicionInsumos">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XEM2Ym5KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" dataType="_paKwxGAyEfGY4p4mQqJkTg" className="com.company.model.ReposicionInsumos"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_XEM2Y25KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput.fechaSolicitud" content="solicitudDeInsumoInput?.fechaSolicitud" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.time.LocalDate">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_XEM2ZG5KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_XEM2ZW5KEfGM0IkyzaWCZQ" type="JAVA_METHOD" expression="setFechaSolicitud">
+              <inputTypes>java.time.LocalDate</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_XEM2Zm5KEfGM0IkyzaWCZQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_XEM2Z25KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" content="solicitudDeInsumo" type="TYPE_VARIABLE" returnType="com.company.model.ReposicionInsumos">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XEM2aG5KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" dataType="_paKwxGAyEfGY4p4mQqJkTg" className="com.company.model.ReposicionInsumos"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_XEM2aW5KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput.esUrgente" content="solicitudDeInsumoInput?.esUrgente" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Boolean">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_XEM2am5KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput" type="COMPLEX" createMode="false"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_XEM2a25KEfGM0IkyzaWCZQ" type="JAVA_METHOD" expression="setEsUrgente">
+              <inputTypes>java.lang.Boolean</inputTypes>
+            </operator>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_XEM2bG5KEfGM0IkyzaWCZQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_XEM2bW5KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" content="solicitudDeInsumo" type="TYPE_VARIABLE" returnType="com.company.model.ReposicionInsumos">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_XEM2bm5KEfGM0IkyzaWCZQ" name="solicitudDeInsumo" dataType="_paKwxGAyEfGY4p4mQqJkTg" className="com.company.model.ReposicionInsumos"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_XEM2b25KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput.insumo" content="def insumoList = []&#xA;//For each item collected in multiple input&#xA;solicitudDeInsumoInput?.insumo.each{&#xA;&#x9;//Add Insumo instance&#xA;&#x9;insumoList.add({ currentInsumoInput ->&#xA;&#x9;&#x9;def insumoVar = insumoDAO.findByPersistenceId(currentInsumoInput.persistenceId_string?.trim() ? currentInsumoInput.persistenceId_string.toLong() : null)&#xA;&#x9;&#x9;if(!insumoVar) {&#xA;&#x9;&#x9;&#x9;throw new IllegalArgumentException(&quot;The aggregated reference of type `Insumo` with the persistence id &quot; + currentInsumoInput.persistenceId_string?.trim() ? currentInsumoInput.persistenceId_string.toLong() : null + &quot; has not been found.&quot;)&#xA;&#x9;&#x9;}&#xA;&#x9;&#x9;insumoVar.nombreInsumo = currentInsumoInput.nombreInsumo&#xA;&#x9;&#x9;insumoVar.unidadMedida = currentInsumoInput.unidadMedida&#xA;&#x9;&#x9;insumoVar.cantidad = currentInsumoInput.cantidad?.toFloat()&#xA;&#x9;&#x9;return insumoVar&#xA;&#x9;}(it))&#xA;}&#xA;return insumoList" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.util.List">
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_XEM2cG5KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput" type="COMPLEX" createMode="false"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_XEM2cW5KEfGM0IkyzaWCZQ" name="insumoDAO" content="insumoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.InsumoDAO" returnTypeFixed="true"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_XEM2cm5KEfGM0IkyzaWCZQ" type="JAVA_METHOD" expression="setInsumo">
+              <inputTypes>java.util.List</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_rWSnIWM0EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_rWSnImM0EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_rWSnI2M0EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_rWSnJWM0EfG06qyWUPqF3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_rWSnJGM0EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_RgoB-WM6EfG06qyWUPqF3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DIvrgGM8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_ipjI4G5KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
-          <contract xmi:type="process:Contract" xmi:id="_RgoB-GM6EfG06qyWUPqF3w"/>
+          <contract xmi:type="process:Contract" xmi:id="_RgoB-GM6EfG06qyWUPqF3w">
+            <inputs xmi:type="process:ContractInput" xmi:id="_XD9l0G5KEfGM0IkyzaWCZQ" name="solicitudDeInsumoInput" type="COMPLEX" dataReference="solicitudDeInsumo" createMode="false">
+              <inputs xmi:type="process:ContractInput" xmi:id="_XD9l0W5KEfGM0IkyzaWCZQ" name="fechaSolicitud" type="LOCALDATE" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_XD9l0m5KEfGM0IkyzaWCZQ" name="esUrgente" type="BOOLEAN" createMode="false"/>
+              <inputs xmi:type="process:ContractInput" xmi:id="_XD9l025KEfGM0IkyzaWCZQ" name="insumo" type="COMPLEX" multiple="true" createMode="false">
+                <inputs xmi:type="process:ContractInput" xmi:id="_XD9l1G5KEfGM0IkyzaWCZQ" name="persistenceId_string" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_XD9l1W5KEfGM0IkyzaWCZQ" name="nombreInsumo" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_XD9l1m5KEfGM0IkyzaWCZQ" name="unidadMedida" createMode="false"/>
+                <inputs xmi:type="process:ContractInput" xmi:id="_XD9l125KEfGM0IkyzaWCZQ" name="cantidad" type="DECIMAL" createMode="false"/>
+              </inputs>
+            </inputs>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XEKaIG5KEfGM0IkyzaWCZQ" expression="solicitudDeInsumoInput?.fechaSolicitud != null" errorMessage="fechaSolicitud is mandatory for ReposicionInsumos" name="mandatory_solicitudDeInsumoInput_fechaSolicitud">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XEKaIW5KEfGM0IkyzaWCZQ" expression="solicitudDeInsumoInput?.esUrgente != null" errorMessage="esUrgente is mandatory for ReposicionInsumos" name="mandatory_solicitudDeInsumoInput_esUrgente">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XEKaIm5KEfGM0IkyzaWCZQ" expression="!solicitudDeInsumoInput?.insumo || solicitudDeInsumoInput?.insumo?.persistenceId_string" errorMessage="Insumo must reference an existing instance with a persistenceId for ReposicionInsumos" name="aggregation_solicitudDeInsumoInput_insumo">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XEKaI25KEfGM0IkyzaWCZQ" expression="solicitudDeInsumoInput?.insumo?.nombreInsumo.flatten().every{it!=null}" errorMessage="nombreInsumo is mandatory for Insumo" name="mandatory_solicitudDeInsumoInput_insumo_nombreInsumo">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XEKaJG5KEfGM0IkyzaWCZQ" expression="solicitudDeInsumoInput?.insumo?.unidadMedida.flatten().every{it!=null}" errorMessage="unidadMedida is mandatory for Insumo" name="mandatory_solicitudDeInsumoInput_insumo_unidadMedida">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+            <constraints xmi:type="process:ContractConstraint" xmi:id="_XELBMG5KEfGM0IkyzaWCZQ" expression="solicitudDeInsumoInput?.insumo?.cantidad.flatten().every{it!=null}" errorMessage="cantidad is mandatory for Insumo" name="mandatory_solicitudDeInsumoInput_insumo_cantidad">
+              <inputNames>solicitudDeInsumoInput</inputNames>
+            </constraints>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_RgoB-2M6EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:Task" xmi:id="_cxt7sGM6EfG06qyWUPqF3w" name="Notificar Inventario corregido actual" outgoing="_RuSSMGM0EfG06qyWUPqF3w" incoming="_LZpEUGM0EfG06qyWUPqF3w" overrideActorsOfTheLane="false">
@@ -98,7 +161,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_LZfTUWM0EfG06qyWUPqF3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_LZfTUGM0EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_cxw_CGM6EfG06qyWUPqF3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DIvrgWM8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_ipjI4W5KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_cxw_B2M6EfG06qyWUPqF3w"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_cxw_CmM6EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -113,7 +176,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_yZNeB2M5EfG06qyWUPqF3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_yZNeBmM5EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_hqQX-WM6EfG06qyWUPqF3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DIvrgmM8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_ipjI4m5KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_hqQX-GM6EfG06qyWUPqF3w"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_hqQX-2M6EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -145,7 +208,7 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_KXsF12M5EfG06qyWUPqF3w" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_KXsF1mM5EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_e5JiSGM6EfG06qyWUPqF3w">
-            <targetForm xmi:type="expression:Expression" xmi:id="_DIvrg2M8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_ipjI425KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <contract xmi:type="process:Contract" xmi:id="_e5JiR2M6EfG06qyWUPqF3w"/>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_e5KJUWM6EfG06qyWUPqF3w" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -163,7 +226,7 @@
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_paKwpGAyEfGY4p4mQqJkTg">
-        <targetForm xmi:type="expression:Expression" xmi:id="_DIvrhGM8EfG06qyWUPqF3w" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+        <targetForm xmi:type="expression:Expression" xmi:id="_ipjv8G5KEfGM0IkyzaWCZQ" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
       </formMapping>
       <overviewFormMapping xmi:type="process:FormMapping" xmi:id="_paKwpmAyEfGY4p4mQqJkTg">
         <targetForm xmi:type="expression:Expression" xmi:id="_paKwp2AyEfGY4p4mQqJkTg" name="" content="" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
