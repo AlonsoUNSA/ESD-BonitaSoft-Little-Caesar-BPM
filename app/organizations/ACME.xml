@@ -737,5 +737,10 @@
       <groupName>north_america</groupName>
       <groupParentPath>/acme/sales</groupParentPath>
     </membership>
+    <membership>
+      <userName>helen.kelly</userName>
+      <roleName>member</roleName>
+      <groupName>acme</groupName>
+    </membership>
   </memberships>
 </organization:Organization>
