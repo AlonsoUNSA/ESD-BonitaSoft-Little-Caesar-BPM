@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_SZFMMG8oEfGS1qSXjEZTQw" name="ReposicionInsumos - 4.0" version="4.0" bonitaModelVersion="9">
+  <process:MainProcess xmi:id="_SZFMMG8oEfGS1qSXjEZTQw" name="ReposicionInsumos" version="4.0" bonitaModelVersion="9">
     <elements xmi:type="process:Pool" xmi:id="_SZGaUG8oEfGS1qSXjEZTQw" name="Proceso de reposicion de insumos" version="4.0">
       <elements xmi:type="process:Lane" xmi:id="_SZHBYG8oEfGS1qSXjEZTQw" name="encargado de almacén" actor="_SZIPoW8oEfGS1qSXjEZTQw">
         <elements xmi:type="process:StartEvent" xmi:id="_SZHBYW8oEfGS1qSXjEZTQw" name="Stock teorico cae por debajo del límite" outgoing="_SZHpFG8oEfGS1qSXjEZTQw">
