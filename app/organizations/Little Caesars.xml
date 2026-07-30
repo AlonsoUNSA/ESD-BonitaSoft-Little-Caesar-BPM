@@ -17,6 +17,15 @@
       <password encrypted="false">bdm</password>
       <customUserInfoValues/>
     </user>
+    <user userName="admin">
+      <firstName>Admin</firstName>
+      <lastName>Admin</lastName>
+      <manager></manager>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles>
     <role name="Employee">
@@ -112,6 +121,56 @@
     <membership>
       <userName>Caesar</userName>
       <roleName>SystemAdministrator</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Employee</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Supervisor</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Manager</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>SystemAdministrator</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>IngredientInspector</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>Cook</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>QualityManager</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>StoreSupervisor</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>DispatchStaff</roleName>
+      <groupName>LitteCaesars</groupName>
+    </membership>
+    <membership>
+      <userName>admin</userName>
+      <roleName>OrderRecepcionist</roleName>
       <groupName>LitteCaesars</groupName>
     </membership>
   </memberships>
